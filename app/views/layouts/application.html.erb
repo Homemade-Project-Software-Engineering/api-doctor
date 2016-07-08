@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Apidoctor</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<script type="text/javascript">
+jQuery.ajax({
+  type: 'POST',
+  url: '/users/1/alarms',
+  dataType: 'json',
+  contentType: 'application/json',
+  data: JSON.stringify({ alarm: { start_at: 10, repetition_timer:2, checked: true, name: "Captoprsil",user_id:1} }),
+  success: function(json) { }
+});
+/*
+jQuery.ajax({
+  type: 'POST',
+  url: '/relationships',
+  dataType: 'json',
+  contentType: 'application/json',
+  data: JSON.stringify({ relationships: { patient_id:1, caregiver_id: 2} }),
+  success: function(json) { }
+});*/
+
+/*jQuery.ajax({
+  type: 'POST',
+  url: '/users',
+  dataType: 'json',
+  contentType: 'application/json',
+  data: JSON.stringify({ user: { name: "josé", email:"a@a.com2", password:"aloura"} }),
+  success: function(json) { }
+});
+</script>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
